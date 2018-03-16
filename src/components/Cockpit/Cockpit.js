@@ -4,10 +4,10 @@ import classes from './Cockpit.css';
 
 const Cockpit = (props) => {
     const assigndClasses = [];
-    let btnClass = '';
+    let btnClass = classes.Button;
 
     if (props.showPersons) {
-        btnClass = classes.Red;
+        btnClass = [classes.Button, classes.Red].join(' ');
     }
 
     if (props.persons.length <= 2) {

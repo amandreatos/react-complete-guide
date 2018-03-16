@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
 import Person from "./Person/Person";
 
 class Persons extends PureComponent {
@@ -47,6 +48,7 @@ class Persons extends PureComponent {
       return (
         <Person
           key={person.id}
+          position={index}
           click={() => this.props.clicked(index)}
           name={person.name}
           age={person.age}
@@ -56,5 +58,10 @@ class Persons extends PureComponent {
     });
   }
 }
+
+Persons.propTypes = {
+  clicked: PropTypes.func,
+  changed: PropTypes.func
+};
 
 export default Persons;
